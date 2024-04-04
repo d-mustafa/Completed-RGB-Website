@@ -21,7 +21,7 @@ previewBtn.style.color = `rgb(255, 255, 0)`;
 
 function changeBgToColor() {
   // Input
-  r = document.getElementById("redinput").value;
+  r = +document.getElementById("redinput").value;
   g = document.getElementById("greeninput").value;
   b = document.getElementById("blueinput").value;
 
@@ -112,4 +112,43 @@ function changeBgToWhite() {
   g.value = `255`;
   b.value = `255`;
   previewBtn.style.color = `rgb(255, 255, 255)`;
+}
+
+// Randomizer for random button's colors
+
+let randomBtn = document.getElementById("randombutton");
+randomBtn.addEventListener("click", randomBg);
+
+function randomBg() {
+  console.log("works");
+
+  // Input
+  // Process
+  let displayWindow = document.getElementById("displaywindow");
+  let rgbOutput = document.getElementById("rgboutput");
+  r = Math.floor(Math.random() * 256);
+  g = Math.floor(Math.random() * 256);
+  b = Math.floor(Math.random() * 256);
+  rInput = document.getElementById("redinput");
+  gInput = document.getElementById("greeninput");
+  bInput = document.getElementById("blueinput");
+
+  // Output
+  displayWindow.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  rgbOutput.innerHTML = `rgb(${r}, ${g}, ${b})`;
+  previewBtn.style.color = `rgb(${r}, ${g}, ${b})`;
+  randomBtn.style.color = `rgb(${r}, ${g}, ${b})`;
+  randomBtn.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+  rInput.value = `${r}`;
+  gInput.value = `${g}`;
+  bInput.value = `${b}`;
+
+  // Instances
+  if (r === `255` && g === `0` && b === `0`) {
+    alert("Red!");
+  } else if (r === `0` && g === `255` && b === `0`) {
+    alert("Green!");
+  } else if (r === `0` && g === `0` && b === `255`) {
+    alert("Blue!");
+  }
 }
