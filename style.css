@@ -54,6 +54,7 @@ input {
 
 label {
   font-size: 14px;
+  margin-left: 10px;
 }
 
 #redinput {
@@ -89,11 +90,17 @@ button {
 #whitebutton {
   color: black;
   background-color: white;
+  margin-right: 50px;
 }
 
 #previewbutton {
   color: white;
   background-color: gray;
+}
+
+#randombutton {
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 /* display window */
